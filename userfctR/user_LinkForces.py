@@ -76,8 +76,8 @@ def user_LinkForces(Z, Zd, mbs_data, tsim, identity):
     L40 = mbs_data.link_id['CKXR2']
     L41 = mbs_data.link_id['CKYL1'] # ressort latéraux seconadaires
     L42 = mbs_data.link_id['CKYR1']
-    L43 = mbs_data.link_id['CKYL2']
-    L44 = mbs_data.link_id['CKYR2']
+    L43 = mbs_data.link_id['CKXC1'] # ressort de traction
+    L44 = mbs_data.link_id['CKXC2']
     
     if identity in [L1, L2, L3, L4, L5, L6, L7, L8]: # ressorts longitudinaux primaires
         K  = mbs_data.user_model['kx1']['k'] *1000 # 31391 kN/m
@@ -121,6 +121,11 @@ def user_LinkForces(Z, Zd, mbs_data, tsim, identity):
     if identity in [L41, L42, L43, L44]: # ressort latéraux seconadaires
         K  = mbs_data.user_model['ky2']['k'] *1000 # 160 kN/m
         Z0 = mbs_data.user_model['ky2']['l'] /1000 # 400 mm
+        Flink = K*(Z-Z0)
+        
+    if identity in [L43,L44]:
+        K = mbs_data.user_model['kxc2']['k']*1000
+        Z0 = mbs_data.user_model['kxc2']['l'] /1000
         Flink = K*(Z-Z0)
        
     return Flink
