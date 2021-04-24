@@ -1,22 +1,24 @@
 #
-#	MBsysTran - Release 8.1 (built: August 08, 2015)
+#	MBsysTran - Release 8.1
 #
 #	Copyright 
-#	Universite catholique de Louvain (UCL) 
-#	Center for Research in Energy and Mechatronics (CEREM) 
+#	Universite catholique de Louvain (UCLouvain) 
+#	Mechatronic, Electrical Energy, and Dynamic systems (MEED Division) 
 #	2, Place du Levant
 #	1348 Louvain-la-Neuve 
 #	Belgium 
 #
 #	http://www.robotran.be 
 #
-#	==> Generation Date: Thu Mar 25 19:59:55 2021
+#	==> Generation Date: Sat Apr 24 19:40:41 2021
 #
 #	==> Project name: one
 #
 #	==> Number of joints: 72
 #
 #	==> Function: F1 - Recursive Direct Dynamics of tree-like MBS
+#
+#	==> Git hash: e4323cc50f813318b5c64b3b53763c941a34ce32
 #
 
 from math import sin, cos
